@@ -8,5 +8,7 @@ const client = new NotesClient();
 // model.addNote('duly noted');
 const view = new NotesView(model, client);
 
-view.displayNotes();
+// view.displayNotes();
 view.displayNotesFromApi();
+
+// client.deleteNote();

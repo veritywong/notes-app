@@ -16,7 +16,9 @@ class NotesModel {
     }
 
     setNotes(notes) {
-        
+        // this.notes.push(notes);
+        this.notes = notes
+
     }
 }
 

@@ -1,14 +1,5 @@
-// class GithubClient {
-//   getRepoInfo(repoName, callback) {
-//     fetch('https://api.github.com/repos/' + repoName)
-//       .then(response => response.json())
-//       .then(data => {
-//         callback(data)
-//       });
-//   }
-// }
-
 class NotesClient {
+
   loadNotes(callback) {
     fetch('http://localhost:3000/notes')
     .then(response => response.json())
@@ -16,6 +7,26 @@ class NotesClient {
       callback(data)
     });
 
+  }
+
+  createNote(note) {
+      return fetch('http://localhost:3000/notes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({content: note}),
+      });
+  }
+  
+  deleteNote(note) {
+      return fetch('http://localhost:3000/notes', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({content: note}),
+      });
   }
 }
 
