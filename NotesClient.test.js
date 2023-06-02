@@ -17,4 +17,21 @@ describe('NotesClient', () => {
             done();
         });
     });
+
+    it('sends a post request to the server', () => {
+        const client = new NotesClient();
+        const inputNote = 'test note'
+        client.createNote(inputNote)
+
+        expect(fetch).toHaveBeenCalledWith(
+            'http://localhost:3000/notes', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({content: inputNote}),
+            }
+        )
+
+    });
 });
