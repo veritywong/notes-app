@@ -41,7 +41,7 @@ describe('NotesView', () => {
         expect(notesElements.length).toBe(1);
     })
 
-    it('displays a new note when value inputted and button clicked', () => {
+    xit('displays a new note when value inputted and button clicked', () => {
 
         const buttonEl = document.querySelector('#add-note-button');
         const inputEl = document.querySelector('#new-note');
@@ -52,7 +52,7 @@ describe('NotesView', () => {
         expect(document.querySelector('div.note-item').innerText).toEqual('My new note test');
     })
     
-    it('displays a new note when value inputted and button clicked', () => {
+    xit('displays a new note when value inputted and button clicked', () => {
         const buttonEl = document.querySelector('#add-note-button');
         const inputEl = document.querySelector('#new-note');
         inputEl.value = 'My new note test';

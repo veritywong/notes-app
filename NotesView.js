@@ -15,15 +15,15 @@ class NotesView {
     }
 
     displayNotes() {
-        const printedNotes = document.querySelectorAll('.note-item')
-        printedNotes.forEach(note => note.remove());
+        const printedNotes = document.querySelectorAll('.note')
+        printedNotes.forEach(item => item.remove());
 
         const notes = this.model.getNotes();
         notes.forEach((note) => {
             const newNote = document.createElement('div');
             document.querySelector('#new-note').value = ''; // clears input from text box
-            newNote.className = 'note-item';
-            newNote.innerText = note;
+            newNote.className = 'note';
+            newNote.textContent = note;
             this.mainContainerEl.append(newNote);
         })
        
@@ -43,7 +43,19 @@ class NotesView {
         return this.client.loadNotes((apiData) => {
             this.model.setNotes(apiData);
             this.displayNotes()
-        })
+        }, (callback) => {
+            callback(this.displayError())
+        });
+    }
+    
+
+    
+    displayError() {
+        const newNote = document.createElement('div');
+        document.querySelector('#new-note').value = ''; // clears input from text box
+        newNote.className = 'error';
+        newNote.textContent = 'Oops, something went wrong!';
+        this.mainContainerEl.append(newNote);
     }
 }
 
