@@ -6,22 +6,15 @@ class NotesView {
         this.model = model
         this.client = client
         this.mainContainerEl = document.querySelector('#main-container');
-
         this.buttonEl = document.querySelector('#add-note-button');
 
         this.buttonEl.addEventListener('click', () => {
-            this.displayNotes();
+            const inputNote = document.querySelector('#new-note').value;
+            this.addNoteToApi(inputNote);
         });
     }
 
-
     displayNotes() {
-        const inputNote = document.querySelector('#new-note').value;
-
-        if (inputNote != '') {
-            // this.model.addNote(inputNote);
-            this.addNoteToApi(inputNote)
-        }
         const printedNotes = document.querySelectorAll('.note-item')
         printedNotes.forEach(note => note.remove());
 
@@ -33,9 +26,12 @@ class NotesView {
             newNote.innerText = note;
             this.mainContainerEl.append(newNote);
         })
-
-        // document.querySelector('div.note-item').remove();
        
+    }
+
+    addNote(inputNote) {
+        this.model.addNote(inputNote);
+        this.displayNotes()
     }
 
     addNoteToApi(inputNote) {

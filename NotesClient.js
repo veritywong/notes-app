@@ -9,7 +9,7 @@ class NotesClient {
 
   }
 
-  createNote(note) {
+  async createNote(note) {
       return fetch('http://localhost:3000/notes', {
         method: 'POST',
         headers: {
@@ -17,6 +17,7 @@ class NotesClient {
         },
         body: JSON.stringify({content: note}),
       });
+
   }
   
   deleteNote(note) {
