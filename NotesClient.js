@@ -25,7 +25,7 @@ class NotesClient {
   async createNote(data) {
     try {
       const response = await fetch('http://localhost:3000/notes', {
-        method: "POST", // or 'PUT'
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -44,8 +44,7 @@ class NotesClient {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({content: note}),
+        }
       });
   }
 }

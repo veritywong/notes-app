@@ -11,4 +11,4 @@ const view = new NotesView(model, client);
 // view.displayNotes();
 view.displayNotesFromApi();
 
-// client.deleteNote();
+client.deleteNote();
