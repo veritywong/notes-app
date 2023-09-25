@@ -35,8 +35,11 @@ class NotesView {
     }
 
     addNoteToApi(inputNote) {
-        this.client.createNote(inputNote);
-        this.displayNotesFromApi()
+        this.client.createNote(inputNote)
+          .then(() => {
+            this.displayNotesFromApi()
+          })
+        
     }
 
     displayNotesFromApi() {
@@ -47,8 +50,6 @@ class NotesView {
             callback(this.displayError())
         });
     }
-    
-
     
     displayError() {
         const newNote = document.createElement('div');

@@ -37,7 +37,7 @@ describe('NotesView', () => {
     it('displays a new note', () => {
         model.addNote('Go to work');
         view.displayNotes()
-        const notesElements = document.querySelectorAll('div.note-item');
+        const notesElements = document.querySelectorAll('.note');
         expect(notesElements.length).toBe(1);
     })
 
@@ -81,7 +81,7 @@ describe('NotesView', () => {
     
         return view.displayNotesFromApi()
             .then(() => {
-                const notes = document.querySelectorAll('div.note-item');
+                const notes = document.querySelectorAll('.note');
                 expect(notes.length).toBe(1);
                 expect(notes.item(0).innerText).toBe('mock api note');
             });

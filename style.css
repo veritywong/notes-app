@@ -1,14 +1,17 @@
 h1, p, * {
     font-family: sans-serif;
-    color: rgb(236, 247, 200);
+    color: 'black';
   }
   
   html {
-    background:#8a9dff;
+    /* background:#8a9dff; */
+    /* background: rgb(29, 200, 149); */
+    background: rgb(240, 147, 85);
   }
   
   body {
-    background: rgb(29, 200, 149);
+    
+    background-image: url('./assets/background-soft.jpg');    
     width: 600px;
     margin: auto;
     margin-top: 20px;
