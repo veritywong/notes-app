@@ -1,5 +1,5 @@
 h1, p, * {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: 'black';
   }
   
@@ -12,7 +12,7 @@ h1, p, * {
   body {
     
     background-image: url('./assets/background-soft.jpg');    
-    width: 600px;
+    width: 800px;
     margin: auto;
     margin-top: 20px;
     padding: 20px;
@@ -34,7 +34,7 @@ h1, p, * {
   }
   
   button {
-    background: #f06f13;
+    background: rgb(240, 147, 85);
     border-radius: 4px;
     padding: 10px 8px;
     border: 1px solid #444;
